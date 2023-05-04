@@ -1,0 +1,46 @@
+
+.qualification {
+  margin-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #E095F2;
+  height: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.qualification-subtitle {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.reviews  textarea {
+  width: 98.2%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #E095F2;
+  margin-top: 20px;
+}
+
+.reviews .btn-publish {
+  display: flex;
+  justify-content: end;
+}
+
+.btn-publish button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 200px;
+  background-color: #E095F2;
+  color: white;
+  border-radius: 10px;
+  border: 0px solid white;
+  cursor: pointer;
+}
+
+.btn-publish button:hover {
+  background-color: #aa71b8;
+}

@@ -1,0 +1,38 @@
+<div class="container">
+  <h1 class="title">Bienvenido {{ userName }}!</h1>
+  <section class="popular">
+    <h2>Búsquedas más populares</h2>
+
+    <div class="schools">
+      <a [routerLink]="['/teachers' , teacher.id]" *ngFor="let teacher of lista">
+        <div class="school">
+          <div class="image">
+            <img class="photo" [src]="teacher.photo">
+          </div>
+          <div class="info">
+            <h2 class="name">{{ teacher.name }}</h2>
+            <p class="district">{{ teacher.course }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="recents">
+    <h2>Búsquedas recientes</h2>
+    <div class="schools">
+      <a routerLink="'teachers/' + teacher.id" *ngFor="let teacher of lista">
+        <div class="school">
+          <div class="image">
+            <img class="photo" [src]="teacher.photo">
+          </div>
+          <div class="info">
+            <h2 class="name">{{ teacher.name }}</h2>
+            <p class="district">{{ teacher.course }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  </div>

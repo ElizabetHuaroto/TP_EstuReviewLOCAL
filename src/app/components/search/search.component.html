@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="two-columns">
+    <section class="filters">
+      <div class="stars">
+        <p>Cantidad de estrellas</p>
+        <div class="values">
+          <div class="value">
+            <span>1</span>
+            <input type="checkbox">
+          </div>
+          <div class="value">
+            <span>2</span>
+            <input type="checkbox">
+          </div>
+          <div class="value">
+            <span>3</span>
+            <input type="checkbox">
+          </div>
+          <div class="value">
+            <span>4</span>
+            <input type="checkbox">
+          </div>
+          <div class="value">
+            <span>5</span>
+            <input type="checkbox">
+          </div>
+        </div>
+      </div>
+
+      <div class="pension">
+        <p>Pensión</p>
+        <div class="values">
+          <div class="value">
+            <span>600 - 1000 soles</span>
+            <input type="checkbox">
+          </div>
+          <div class="value">
+            <span>300 - 600 soles</span>
+            <input type="checkbox">
+          </div>
+          <div class="value">
+            <span>0 - 300 soles</span>
+            <input type="checkbox">
+          </div>
+        </div>
+      </div>
+
+      <div class="district">
+        <p>Zona geográfica</p>
+        <select name="districts" id="district">
+          <option value="value1">Chorrillos</option>
+          <option value="value2" selected>SJL</option>
+          <option value="value3">San Miguel</option>
+        </select>
+      </div>
+    </section>
+    <section class="results">
+      <h1>Profesores Encontrados</h1>
+      <p style="font-style: italic;">Se encontraron {{this.lista.length}} resultados para {{textSearch}}</p>
+      <div class="response">
+        <a [routerLink]="['/teachers' , school.id]"style="text-decoration: none; color: black;" *ngFor="let school of lista">
+          <div class="card">
+            <div class="image">
+              <img class="photo" [src]="school.photo">
+            </div>
+            <div class="info">
+              <h2 class="name">{{ school.name }}</h2>
+              <p class="district" *ngIf="userType === 'padre de familia'; else course">{{ school.district }}</p>
+              <ng-template #course>
+                <p class="course">{{ school.course }}</p>
+              </ng-template>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+</div>

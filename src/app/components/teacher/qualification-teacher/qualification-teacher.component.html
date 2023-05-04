@@ -1,0 +1,16 @@
+<section class="qualification">
+  <p class="qualification-subtitle">Calificar al profesor</p>
+  <div class="stars">
+    <p>¿Cuantas estrellas les concedes?</p>
+    <!-- Aqui las estrellas -->
+  </div>
+</section>
+<div class="reviews">
+  <form (submit)="sendReview()">
+    <textarea name="review" id="review" cols="20" rows="10" placeholder="Escribir comentario..."></textarea>
+    <div class="btn-publish">
+      <button type="submit">Publicar</button>
+    </div>
+  </form>
+</div>
+

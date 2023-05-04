@@ -1,0 +1,83 @@
+.navbar {
+  background-color: #1c62be;
+  padding: 10px 0;
+}
+.navbar-brand {
+  display: flex; /*se muestra uno a continuacion de otro de inzq a derecha*/
+  /*justify-conent:space-betweem es para dar espacio entre los componentes*/
+  gap: 1rem;
+  align-items: center;
+  color: white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.navbar-brand:hover {
+  color: rgb(245, 179, 244);
+}
+.navbar-brand h1 {
+  margin: 0;
+  text-transform: uppercase;
+}
+.navbar-brand img {
+  max-width: 100px;
+  width: 100%;
+}
+.navbar-nav .nav-item .nav-link {
+  color: white;
+}
+.navbar-expand-lg .navbar-collapse {
+  justify-content: flex-end;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  column-gap: 10px;
+}
+
+.navbar-nav li {
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-item {
+  padding: 10px;
+}
+
+.btn-login, .btn-logout {
+  background-color: #D662E0;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.btn-login a, .btn-logout a {
+  text-decoration: none;
+  color: white;
+}
+
+.txt-search {
+  padding: 10px 20px;
+  width: 500px;
+  border-radius: 20px;
+}
+.btn-search {
+  background-color: #D662E0;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}

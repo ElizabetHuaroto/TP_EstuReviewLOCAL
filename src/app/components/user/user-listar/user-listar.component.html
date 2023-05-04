@@ -1,0 +1,59 @@
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> id. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="nameUser">
+        <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.nameUser}} </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="typeUser">
+        <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.typeUser}} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="emailUser">
+        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.emailUser}} </mat-cell>
+      </ng-container>
+  
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="passwordUser">
+            <mat-header-cell *matHeaderCellDef> Contraseña </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.passwordUser}} </mat-cell>
+          </ng-container>
+  
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="ageUser">
+              <mat-header-cell *matHeaderCellDef> Edad </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.ageUser}} </mat-cell>
+            </ng-container>
+  
+           <!-- Symbol Column -->
+           <ng-container matColumnDef="districUser">
+            <mat-header-cell *matHeaderCellDef> Distrito </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.districUser}} </mat-cell>
+          </ng-container>
+  
+  
+  
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  
+    <mat-paginator #paginator
+                   [pageSize]="10"
+                   [pageSizeOptions]="[5, 10, 20]"
+                   [showFirstLastButtons]="true">
+    </mat-paginator>
+  </div>
+  

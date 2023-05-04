@@ -1,0 +1,69 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 71.2vh;
+}
+
+.profile {
+  margin-top: 20px;
+  background-color: #8AB6EA;
+  padding: 20px 50px;
+  padding-bottom: 100px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.card img {
+  border-radius: 50%;
+}
+
+.info .name {
+  text-transform: uppercase;
+}
+
+.info .type {
+  text-transform: capitalize;
+}
+
+.fields {
+  margin-top: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.field input {
+  background-color: #E095F2;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: none;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.actions button {
+  background-color: #E095F2;
+  color: white;
+  padding: 10px;
+  width: 200px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #be7ecd;
+}

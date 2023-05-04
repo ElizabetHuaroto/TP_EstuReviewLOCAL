@@ -1,0 +1,38 @@
+<div class="container">
+  <h1 class="title">Bienvenido {{ userName }}!</h1>
+  <section class="popular">
+    <h2>Busquedas más populares</h2>
+
+    <div class="schools">
+      <a [href]="'colegios/' + school.id" *ngFor="let school of lista">
+        <div class="school">
+          <div class="image">
+            <img class="photo" [src]="school.photo" alt="Pamer">
+          </div>
+          <div class="info">
+            <h2 class="name">{{ school.name }}</h2>
+            <p class="district">{{ school.district }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="recents">
+    <h2>Busquedas recientes</h2>
+    <div class="schools">
+      <a routerLink="'colegios/' + school.id" *ngFor="let school of lista">
+        <div class="school">
+          <div class="image">
+            <img class="photo" [src]="school.photo" alt="Pamer">
+          </div>
+          <div class="info">
+            <h2 class="name">{{ school.name }}</h2>
+            <p class="district">{{ school.district }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  </div>

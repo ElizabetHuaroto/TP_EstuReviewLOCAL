@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="profile">
+    <!-- <div class="card">
+      <img width="50" height="50" [src]="user.photo" [alt]="user.nameUser + ' photo'">
+      <div class="info">
+        <p class="name">{{ user.nameUser }}</p>
+        <p class="type">{{ user.typeUser }}</p>
+      </div>
+    </div> -->
+    <div class="fields">
+      <div class="field">
+        <label for="email">Correo</label>
+        <input disabled type="text" [value]="user.emailUser">
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input disabled type="password" [value]="user.passwordUser">
+      </div>
+      <div class="field">
+        <label for="district">Districto</label>
+        <input disabled type="text" [value]="user.districUser">
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <button type="button">Guardar</button>
+  </div>
+</div>

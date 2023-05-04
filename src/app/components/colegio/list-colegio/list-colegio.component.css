@@ -1,0 +1,42 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.schools {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+
+.schools a {
+  text-decoration: none;
+  color: black;
+}
+
+.school {
+  background: #D9D9D9;
+  padding: 10px;
+}
+
+.school .image {
+  display: flex;
+  justify-content: center;
+}
+
+.school .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image .photo {
+  width: 350px;
+  height: 200px;
+}
+
+.title {
+  text-align: center;
+}

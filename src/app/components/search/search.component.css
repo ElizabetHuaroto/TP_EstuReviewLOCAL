@@ -1,0 +1,68 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 71.5vh;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 300px 2fr;
+  column-gap: 50px;
+  margin-top: 20px;
+}
+
+.filters {
+  background-color: #8AB6EA;
+  padding: 20px;
+}
+
+.value {
+  display: flex;
+  justify-content: space-between
+}
+
+.district select {
+  width: 100%;
+  padding: 10px;
+}
+
+.stars p, .pension p, .district p {
+  font-weight: bold;
+}
+
+.response {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.card {
+  background: #D9D9D9;
+  padding: 10px;
+}
+
+.card .image {
+  display: flex;
+  justify-content: center;
+}
+
+.card .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.image .photo {
+  width: 250px;
+  height: 200px;
+}
+
+.title {
+  text-align: center;
+}
+
+.name {
+  font-size: 18px;
+}
+
