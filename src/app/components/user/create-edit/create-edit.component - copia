@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="two-columns">
+      <div class="form-register">
+        <h1 class="text-center">Registro</h1>
+
+        <div class="align-center">
+          <a href="#" class="btn-google">
+            <img width="24px" src="assets/images/google.png" alt="google logo">
+            <span>Registrarse con Google</span>
+          </a>
+        </div>
+        <form [formGroup]="form" (submit)="aceptar()" >
+          <div class="fields">
+            <div class="field">
+              <label for="fullname">Nombre y Apellidos</label>
+              <input id="fullname" type="text" placeholder="Ingresa tu nombre y apellido" formControlName="nameUser">
+            </div>
+            <div class="field">
+              <label for="mail">Correo</label>
+              <input id="mail" type="email" placeholder="Ingresa tu correo" formControlName="emailUser">
+            </div>
+            <div class="field">
+              <label for="type">Tipo</label>
+              <select id="type" name="type" formControlName="typeUser" >
+                <option value="padre de familia">Padre de familia</option>
+                <option value="universitario" selected>Universitario</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" type="password" placeholder="Ingresa tu contraseña" formControlName="passwordUser">
+            </div>
+            <div class="field">
+              <label for="district">Distrito</label>
+              <input id="district" type="text" placeholder="Ingresa tu distrito" formControlName="districUser">
+            </div>
+            <div class="field">
+              <label for="age">Edad</label>
+              <input id="age" type="number" min="16" max="90" placeholder="Ingresa tu edad" formControlName="ageUser">
+            </div>
+          </div>
+          <div class="actions">
+            <button type="submit">Registrar</button>
+          </div>
+        </form>
+      </div>
+    <img  src="assets/images/ingreso.png">
+  </div>
+</div>
