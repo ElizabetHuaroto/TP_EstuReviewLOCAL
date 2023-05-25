@@ -90,7 +90,7 @@ module.exports = function () {
         name: "Jose Mascaro",
         course: "Programación OPP",
         pension: 90,
-        photo: "https://buscatuprofesor.es/data/uploads/SEO%20photo/10.jpg"
+        photo: "https://apliense.xtec.cat/prestatgeria/centres/a8062717_2821/57b333cfc99f.jpg"
       },
       {
         id: 3,
