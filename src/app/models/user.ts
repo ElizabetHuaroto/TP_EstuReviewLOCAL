@@ -3,8 +3,8 @@ export class User
   id:number=0;
   nameUser: string="";
   typeUser: string="";
-  emailUser: string="";
-  passwordUser: string="";
+  email: string="";
+  password: string="";
   districUser: string="";
   ageUser:number=0;
 

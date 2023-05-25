@@ -20,8 +20,8 @@ ngOnInit(): void{
     id: new FormControl(),
   nameUser: new FormControl(),
   typeUser:new FormControl(),
-  emailUser: new FormControl(),
-  passwordUser: new FormControl(),
+  email: new FormControl(),
+  password: new FormControl(),
   districUser: new FormControl(),
   ageUser:new FormControl()
 
@@ -32,10 +32,10 @@ aceptar():void{
   this.user.id = this.form.value ['id'];
   this.user.nameUser = this.form.value ['nameUser'];
   this.user.typeUser = this.form.value ['typeUser'];
-  this.user.emailUser = this.form.value ['emailUser'];
+  this.user.email = this.form.value ['email'];
   this.user.districUser = this.form.value ['districUser'];
   this.user.ageUser = this.form.value ['ageUser'];
-  this.user.passwordUser = this.form.value ['passwordUser'];
+  this.user.password = this.form.value ['password'];
   if(this.form.value['nameUser'].length>0 &&
   this.form.value['typeUser'].length>0 &&
   this.form.value['districUser'].length>0)

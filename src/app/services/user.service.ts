@@ -15,6 +15,9 @@ private listaCambio = new Subject<User[]>();
 public isEnterSubject = new BehaviorSubject<boolean>(false);
   public isEnter$ = this.isEnterSubject.asObservable();
 
+  public univSubject = new BehaviorSubject<boolean>(false);
+  public univ$ = this.univSubject.asObservable();
+
   constructor(private http: HttpClient) { }
 
   getAll() {

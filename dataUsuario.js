@@ -5,10 +5,10 @@ module.exports = function () {
         id:1,
         nameUser: "Luis Pérez Reyes",
         typeUser: "padre de familia",
-        emailUser:"lperez@gmail.com",
-        passwordUser: "123%&",
+        email:"lperez@gmail.com",
+        password: "123%&",
         districUser:"San Juan de Lurigancho",
-        ageUser: 27
+        ageUser: 27,
 
       },
 
@@ -17,8 +17,8 @@ module.exports = function () {
         id:2,
         nameUser: "Camilo andrade Guerra",
         typeUser: "universitario",
-        emailUser:"Camilo@gmail.com",
-        passwordUser: "123%&",
+        email:"Camilo@gmail.com",
+        password: "123%&",
         districUser:"Los Olivos",
         ageUser: 17
 
@@ -27,8 +27,8 @@ module.exports = function () {
         id:3,
         nameUser: "Rosa del Campo Reyes",
         typeUser: "padre de familia",
-        emailUser:"Rosa@gmail.com",
-        passwordUser: "123%&",
+        email:"Rosa@gmail.com",
+        password: "123%&",
         districUser:"San Isidro",
         ageUser: 27
 
@@ -37,8 +37,8 @@ module.exports = function () {
         id:4,
         nameUser: "Karina Cano Cardenas",
         typeUser: "universitario",
-        emailUser:"karina@gmail.com",
-        passwordUser: "123%&",
+        email:"karina@gmail.com",
+        password: "123%&",
         districUser:"San Miguel",
         ageUser: 14
 
@@ -47,8 +47,8 @@ module.exports = function () {
         id:5,
         nameUser: "Luis Pérez Reyes",
         typeUser: "Padre de Familia",
-        emailUser:"lperez@gmail.com",
-        passwordUser: "123%&",
+        email:"lperez@gmail.com",
+        password: "123%&",
         districUser:"San Juan de Lurigancho",
         ageUser: 27
 

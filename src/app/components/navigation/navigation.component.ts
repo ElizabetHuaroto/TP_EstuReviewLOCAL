@@ -9,11 +9,18 @@ import { UserService } from 'src/app/services/user.service';
 export class NavigationComponent {
 
   isEnter: boolean;
+  univ:boolean;
+
   constructor(private userService: UserService) {
     //CAMBIO NAV
     // Subscribirse a los cambios en la variable "isLogged" en el UserService
     this.userService.isEnter$.subscribe(isEnter => {
       this.isEnter = isEnter;
+    });
+
+    //
+    this.userService.univ$.subscribe(univ => {
+      this.univ = univ;
     });
   }
 }
