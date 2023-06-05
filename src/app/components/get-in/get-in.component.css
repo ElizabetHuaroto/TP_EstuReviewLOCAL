@@ -5,9 +5,18 @@
 }
 
 .two-columns {
+  padding: 10px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 10px;
+}
+
+@media (min-width: 720px) {
+  .two-columns {
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 15px;
+  }
 }
 
 .text-center {

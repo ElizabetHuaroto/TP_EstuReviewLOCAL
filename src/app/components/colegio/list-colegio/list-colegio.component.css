@@ -3,12 +3,20 @@
   width: 100%;
   margin: 0 auto;
   margin-bottom: 20px;
+  padding: 15px;
 }
 
 .schools {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 20px;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 20px;
+}
+
+@media(min-width: 720px) {
+  .schools {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+  }
 }
 
 .schools a {
@@ -28,8 +36,24 @@
 
 .school .info {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+}
+
+.info h2 {
+  margin-bottom: 0;
+}
+
+.info p {
+  margin-top: 5px;
+}
+
+
+@media(min-width: 720px) {
+  .school .info {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .image .photo {

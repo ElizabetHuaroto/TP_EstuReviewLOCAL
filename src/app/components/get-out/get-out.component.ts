@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./get-out.component.css']
 })
 export class GetOutComponent {
-
+  register() {
+    //this.SecurityService.register()
+  }
 }
