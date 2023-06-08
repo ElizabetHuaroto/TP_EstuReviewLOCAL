@@ -37,8 +37,8 @@
 
       <ng-template #usuariologeado>
         <div class="buscar">
-          <input class="txt-search" type="text" placeholder="¿Qué profesores estás buscando?">
-          <button routerLink="/search" class="btn-search" type="button">Buscar</button>
+          <input class="txt-search" type="text" placeholder="¿Qué estás buscando?">
+          <button (click)="search()"  class="btn-search" type="button">Buscar</button>
         </div>
         <ul class="navbar-nav">
           <li class="nav-item">

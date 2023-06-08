@@ -37,6 +37,7 @@ import { ProfileTeacherComponent } from './components/teacher/profile-teacher/pr
 import { QualificationTeacherComponent } from './components/teacher/qualification-teacher/qualification-teacher.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchSchoolComponent } from './component/search-school/search-school.component';
+import { ReviewTeacherComponent } from './components/review-teacher/review-teacher.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { SearchSchoolComponent } from './component/search-school/search-school.c
     ProfileTeacherComponent,
     QualificationTeacherComponent,
     FooterComponent,
-    SearchSchoolComponent
+    SearchSchoolComponent,
+    ReviewTeacherComponent
   ],
   imports: [
     BrowserModule,

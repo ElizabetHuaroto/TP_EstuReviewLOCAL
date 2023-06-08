@@ -30,7 +30,10 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.calification{
+  color:#1c62be;
+  font-weight:bolder;
+}
 .image .photo {
   width: 350px;
   height: 200px;

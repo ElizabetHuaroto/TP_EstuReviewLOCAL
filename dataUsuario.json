@@ -8,6 +8,7 @@
       "password": "$2a$10$YmTNWtjXZH1gRj86g02E9OWFhPE36tAuGKb6DIOxJp8wViSQG5rh.",
       "districUser":"San Juan de Lurigancho",
       "ageUser": 27
+
     },
     {
       "id":2,
@@ -25,21 +26,24 @@
       "name": "Pitágoras",
         "district": "Los olivos",
       "pension":144,
-      "photo": "https://www.pitagorasjauja.com/upldba/archvs/1/fot_509.jpeg"
+      "photo": "https://www.pitagorasjauja.com/upldba/archvs/1/fot_509.jpeg",
+      "calification":3
     },
     {
       "id": 2,
       "name": "Innova School",
       "district": "San Miguel",
       "pension": 177,
-      "photo": "https://www.innovaschools.edu.pe/wp-content/uploads/2017/05/foto-fondo-sede-1920x1080.jpg"
+      "photo": "https://www.innovaschools.edu.pe/wp-content/uploads/2017/05/foto-fondo-sede-1920x1080.jpg",
+      "calification":4
     },
     {
       "id": 3,
       "name": "Pamer",
         "district": "Chorrillos",
       "pension":243,
-      "photo": "https://pamer.edu.pe/colegios/wp-content/uploads/sites/2/2023/01/pamer-chorrillos-2.jpg"
+      "photo": "https://pamer.edu.pe/colegios/wp-content/uploads/sites/2/2023/01/pamer-chorrillos-2.jpg",
+      "calification":2
     }
   ],
   "teachers": [
@@ -48,21 +52,78 @@
       "name": "Javier Ulisis",
       "course": "Calculo I",
       "pension": 90,
-      "photo": "https://www.aprendemas.com/co/blog/images/2021/10/profesor_mal_tips.jpg"
+      "photo": "https://www.aprendemas.com/co/blog/images/2021/10/profesor_mal_tips.jpg",
+      "calification":5
+
     },
     {
       "id": 2,
       "name": "Jose Mascaro",
       "course": "Programación II",
       "pension": 90,
-      "photo": "https://blogs.ucontinental.edu.pe/wp-content/uploads/2021/07/dia-del-maestro-famosos-que-fueron-profesores-en-la-vida-real-universidad-continental.jpg"
+      "photo": "https://blogs.ucontinental.edu.pe/wp-content/uploads/2021/07/dia-del-maestro-famosos-que-fueron-profesores-en-la-vida-real-universidad-continental.jpg",
+      "calification":4
     },
     {
       "id": 3,
       "name": "Susano Baca",
       "course": "Ética",
       "pension": 80,
-      "photo": "https://www.unav.edu/documents/10174/0/noticia_Rhonheimer/fd945a65-e502-0fe4-c44f-ff9e7f5578ce"
+      "photo": "https://www.unav.edu/documents/10174/0/noticia_Rhonheimer/fd945a65-e502-0fe4-c44f-ff9e7f5578ce",
+      "calification":5
     }
-  ]
+  ],
+  "reviewSchool":[{
+    "id":1,
+    "dateReviewS":"2000-09-10",
+    "reviewS": "Buen colegio",
+    "calification": 4,
+    "pension":100,
+    "colegio": {
+      "id": 3,
+      "name": "Pamer",
+        "district": "Chorrillos",
+      "pension":243,
+      "photo": "https://pamer.edu.pe/colegios/wp-content/uploads/sites/2/2023/01/pamer-chorrillos-2.jpg",
+      "calification":2
+    },
+    "user":{
+      "id":2,
+      "nameUser": "Camilo andrade Guerra",
+      "typeUser": "universitario",
+      "email":"Camilo@gmail.com",
+      "password": "$2a$10$YmTNWtjXZH1gRj86g02E9OWFhPE36tAuGKb6DIOxJp8wViSQG5rh.",
+      "districUser":"Los Olivos",
+      "ageUser": 17
+
+  }
+  }
+  ],
+
+  "reviewTeacher":[{
+    "id":1,
+    "dateReviewT":"2000-09-10",
+    "reviewT": "Buen profesor",
+    "calification": 4,
+    "payForHour":50,
+    "teacher": {
+      "id": 1,
+      "name": "Javier Ulisis",
+      "course": "Calculo I",
+      "pension": 90,
+      "photo": "https://www.aprendemas.com/co/blog/images/2021/10/profesor_mal_tips.jpg",
+      "calification":5
+    },
+    "user":{
+      "id":2,
+      "nameUser": "Camilo andrade Guerra",
+      "typeUser": "universitario",
+      "email":"Camilo@gmail.com",
+      "password": "$2a$10$YmTNWtjXZH1gRj86g02E9OWFhPE36tAuGKb6DIOxJp8wViSQG5rh.",
+      "districUser":"Los Olivos",
+      "ageUser": 17
+
+  }
+  }]
+
 }

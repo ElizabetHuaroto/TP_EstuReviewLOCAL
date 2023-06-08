@@ -40,13 +40,16 @@
 }
 
 .info h2 {
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
 .info p {
   margin-top: 5px;
 }
-
+.calification{
+  color:#1c62be;
+  font-weight:bolder;
+}
 
 @media(min-width: 720px) {
   .school .info {

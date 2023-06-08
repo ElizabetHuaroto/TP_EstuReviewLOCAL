@@ -5,4 +5,5 @@ export class Teacher
   course: string = "";
   photo: string = "";
   pension: number = 0;
+  calification: number=0; //nuevo
 }

@@ -8,30 +8,43 @@ import { Router } from '@angular/router';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-
   isEnter: boolean;
-  univ:boolean;
+  userParsed: any; // Variable para almacenar el usuario parseado del localStorage
 
-  constructor(private userService: UserService, private router: Router) {
-    //CAMBIO NAV
-    // Subscribirse a los cambios en la variable "isLogged" en el UserService
-    // this.userService.isEnter$.subscribe(isEnter => {
-    //   this.isEnter = isEnter;
-    // });
+  constructor(private userService: UserService, private router: Router) {}
 
-    // //
-    // this.userService.univ$.subscribe(univ => {
-    //   this.univ = univ;
-    // });
-  }
   ngOnInit(): void {
     const user = localStorage.getItem("UserLogged");
-    const userParsed = user === null? null : JSON.parse(user);
+    this.userParsed = user ? JSON.parse(user) : null; // Actualización: Asignar el valor de userParsed
 
-    if (userParsed !== null) {
+    if (this.userParsed !== null) {
       this.isEnter = true;
+
+      if (this.userParsed.typeUser === 'universitario') {
+        this.router.navigate(['/teachers']);
+      } else {
+        this.router.navigate(['/colegios']);
+      }
     }
   }
+
+
+  search() {
+    const user = localStorage.getItem("UserLogged");
+    this.userParsed = user ? JSON.parse(user) : null;
+
+    if (this.userParsed !== null) {
+      if (this.userParsed.typeUser === 'universitario') {
+        this.router.navigate(['/search']);
+      } else if (this.userParsed.typeUser === 'padre de familia') {
+        this.router.navigate(['/searchSchool']);
+      } else {
+        console.log("Tipo de usuario no reconocido:", this.userParsed.typeUser);
+      }
+    }
+  }
+
+
 
   async logout() {
     localStorage.removeItem("UserLogged");

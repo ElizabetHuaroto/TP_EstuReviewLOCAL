@@ -12,6 +12,8 @@ import { SearchComponent } from './components/search/search.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 import { ListTeacherComponent } from './components/teacher/list-teacher/list-teacher.component';
 import { ProfileTeacherComponent } from './components/teacher/profile-teacher/profile-teacher.component';
+import { ReviewSchool } from './models/reviewSchool';
+import { SearchSchoolComponent } from './component/search-school/search-school.component';
 
 const routes: Routes = [
   {
@@ -35,6 +37,10 @@ const routes: Routes = [
     component: SearchComponent
   },
   {
+    path:"searchSchool",
+    component: SearchSchoolComponent
+  },
+  {
     path: 'users/:id',
     component: UserProfileComponent
   },
@@ -55,7 +61,8 @@ const routes: Routes = [
       },
       {
         path: 'edicion/:id', component: RegistroColegioComponent
-      }
+      },
+     //no sé como hacer el routing para las reviews de tal forma en que le hago click al perfil y salga la lista de review
     ],
   },
   {
@@ -66,7 +73,8 @@ const routes: Routes = [
         path:'nuevo', component:CreateEditComponent
       }
     ]
-  },
+  }
+
 ];
 
 @NgModule({

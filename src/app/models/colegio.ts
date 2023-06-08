@@ -5,4 +5,5 @@ export class Colegio
   pension: number = 0;
   district: string="";
   photo: string = "";
+  calification: number=0; //NUEVO
 }
