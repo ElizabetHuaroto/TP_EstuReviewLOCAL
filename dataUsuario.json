@@ -103,27 +103,21 @@
   "reviewTeacher":[{
     "id":1,
     "dateReviewT":"2000-09-10",
-    "reviewT": "Buen profesor",
+    "review": "Buen profesor",
     "calification": 4,
     "payForHour":50,
-    "teacher": {
-      "id": 1,
-      "name": "Javier Ulisis",
-      "course": "Calculo I",
-      "pension": 90,
-      "photo": "https://www.aprendemas.com/co/blog/images/2021/10/profesor_mal_tips.jpg",
-      "calification":5
-    },
-    "user":{
-      "id":2,
-      "nameUser": "Camilo andrade Guerra",
-      "typeUser": "universitario",
-      "email":"Camilo@gmail.com",
-      "password": "$2a$10$YmTNWtjXZH1gRj86g02E9OWFhPE36tAuGKb6DIOxJp8wViSQG5rh.",
-      "districUser":"Los Olivos",
-      "ageUser": 17
+    "teacherId":1,
+    "userId":1
+  }],
 
-  }
+  "reviewSchool":[{
+    "id":1,
+    "dateReviewS":"2000-09-10",
+    "review": "Buen colegio",
+    "calification": 3,
+    "pension":500,
+    "schoolId":2,
+    "userId":2
   }]
 
 }

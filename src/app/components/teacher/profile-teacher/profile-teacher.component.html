@@ -21,5 +21,7 @@
 
   <app-qualification-teacher *ngIf="qualification" (sendedReview)="sendedReview()"></app-qualification-teacher>
 
+  <app-review-teacher *ngFor="let review of reviews" [userId]="review.userId" [review] = review.review [calification] =review.calification [dateReviewT]=" review.dateReviewT"></app-review-teacher>
+
 </div>
 

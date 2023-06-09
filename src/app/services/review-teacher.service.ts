@@ -26,5 +26,7 @@ private listaCambio = new Subject<ReviewTeacher[]>();
    update(aut: ReviewTeacher){
      return this.http.put(this.url+"/"+aut.id, aut);
    }
-
+   listTeacherId(id:number){
+    return this.http.get<ReviewTeacher[]>(`${this.url}?userId=${id}`);
+  }
 }

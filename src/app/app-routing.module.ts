@@ -13,7 +13,7 @@ import { UserProfileComponent } from './components/user/user-profile/user-profil
 import { ListTeacherComponent } from './components/teacher/list-teacher/list-teacher.component';
 import { ProfileTeacherComponent } from './components/teacher/profile-teacher/profile-teacher.component';
 import { ReviewSchool } from './models/reviewSchool';
-import { SearchSchoolComponent } from './component/search-school/search-school.component';
+import { SearchschoolComponent } from './components/searchschool/searchschool.component';
 
 const routes: Routes = [
   {
@@ -38,7 +38,7 @@ const routes: Routes = [
   },
   {
     path:"searchSchool",
-    component: SearchSchoolComponent
+    component: SearchschoolComponent
   },
   {
     path: 'users/:id',

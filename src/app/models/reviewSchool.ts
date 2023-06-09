@@ -6,7 +6,7 @@ export class ReviewSchool
   dateReviewS: Date=new Date(Date.now())
   reviewS: string = "";
   calification: number = 0;
-  colegio: Colegio = new Colegio();
-  user:User = new User();
+  schoolId: number=0;
+  userId:number=0;
   pension: number =0;
 }

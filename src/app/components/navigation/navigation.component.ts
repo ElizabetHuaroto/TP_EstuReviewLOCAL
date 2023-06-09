@@ -20,11 +20,6 @@ export class NavigationComponent implements OnInit {
     if (this.userParsed !== null) {
       this.isEnter = true;
 
-      if (this.userParsed.typeUser === 'universitario') {
-        this.router.navigate(['/teachers']);
-      } else {
-        this.router.navigate(['/colegios']);
-      }
     }
   }
 

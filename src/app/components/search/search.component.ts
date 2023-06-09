@@ -19,7 +19,7 @@ export class SearchComponent {
   lista: any = [];
   textSearch: string = '';
   userType = "universitario"; // colegial o padre_familia
-
+  valuee: boolean= true;
   ngOnInit(): void {
 
     this.route.params.subscribe((data: Params) => {

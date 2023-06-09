@@ -21,6 +21,7 @@ export class ProfileSchoolComponent {
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id']; //capturando el id del listado
+      console.log("aa");
     });
 
     this.getSchoolById();
