@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ColegioService } from 'src/app/services/colegio.service';
 import { TeacherService } from 'src/app/services/teacher.service';
@@ -15,16 +15,17 @@ export class SearchComponent {
     private TeacherService: TeacherService,
     private router: Router,
     private route: ActivatedRoute) {}
-
+    @Input() textoBusqueda: string="";
   lista: any = [];
   textSearch: string = '';
   userType = "universitario"; // colegial o padre_familia
   valuee: boolean= true;
-  ngOnInit(): void {
 
+  ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.textSearch = data['text']; //capturando el id del listado
     });
+    console.log(this.textSearch);
 
     if (this.userType === 'padre_familia') {
       this.ColegioService.list()

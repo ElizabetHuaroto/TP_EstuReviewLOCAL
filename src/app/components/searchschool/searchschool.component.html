@@ -1,1 +1,88 @@
-<p>ooo</p>
+<div class="container">
+  <div class="two-columns">
+    <section class="filters">
+      <div class="stars">
+        <p>Cantidad de estrellas</p>
+        <div class="values">
+          <div class="value">
+            <span>1</span>
+            <input type="checkbox">
+          </div>
+          <div class="value">
+            <span>2</span>
+            <input type="checkbox">
+          </div>
+          <div class="value">
+            <span>3</span>
+            <input type="checkbox">
+          </div>
+          <div class="value">
+            <span>4</span>
+            <input type="checkbox">
+          </div>
+          <div class="value">
+            <span>5</span>
+            <input type="checkbox">
+          </div>
+        </div>
+      </div>
+
+      <div class="pension">
+        <p>Pensión</p>
+        <div class="values">
+          <div class="value">
+            <span>estatal</span>
+            <input type="checkbox">
+          </div>
+          <div class="value">
+            <span>300-400 soles</span>
+            <input [(ngModel)] ="valuee" type="checkbox">
+          </div>
+          <div class="value">
+            <span>400 - 500 soles</span>
+            <input type="checkbox">
+          </div>
+          <div class="value">
+            <span>500 - 700 soles</span>
+            <input type="checkbox">
+          </div>
+        </div>
+      </div>
+
+      <div class="district">
+        <p>cursos que dicta</p>
+        <select name="districts" id="district">
+          <option value="value1">San Juan de Lurigancho</option>
+          <option value="value2" selected>Los Olivos</option>
+          <option value="value3">Choriillo</option>
+          <option value="value4">Cercado de Lima</option>
+          <option value="value5">Surco</option>
+          <option value="value6">Ate</option>
+          <option value="value7">La molina</option>
+
+        </select>
+      </div>
+    </section>
+    <section class="results">
+      <h1>Colegios encontrados</h1>
+      <p style="font-style: italic;">Se encontraron {{this.lista.length}} resultados para {{textSearch}}</p>
+      <div class="response">
+        <a [routerLink]="['/colegios' , school.id]"style="text-decoration: none; color: black;" *ngFor="let school of lista">
+          <div class="card">
+            <div class="image">
+              <img class="photo" [src]="school.photo">
+            </div>
+            <div class="info">
+              <h2 class="name">{{ school.name }}</h2>
+              <p class="district">{{ school.district }}</p>
+              <ng-template #course>
+                <p class="course">{{ school.course }}</p>
+              </ng-template>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+</div>
