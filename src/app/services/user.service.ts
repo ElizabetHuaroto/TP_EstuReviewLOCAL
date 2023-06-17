@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { BehaviorSubject, Observable, Subject, map } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import{ MatTableDataSource } from'@angular/material/table';
 import { User } from '../models/user';
 const baseUrl = environment.base;
@@ -9,7 +9,8 @@ const baseUrl = environment.base;
   providedIn: 'root'
 })
 export class UserService {
-  private url = `${baseUrl}/users`;
+  private url = `${baseUrl}`;
+  private httpHeaders = new HttpHeaders({'Access-Control-Allow-Origin': 'http://localhost:8080/api'});
 private listaCambio = new Subject<User[]>();
 //CAMBIO NAV
 public isEnterSubject = new BehaviorSubject<boolean>(false);
@@ -20,23 +21,23 @@ public isEnterSubject = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { }
 
-  getAll() {
-    return this.http.get(this.url);
+  getAll() { //como poner esto en backend
+    return this.http.get(this.url+"/users");
   }
 
   getById(id: number) {
-    return this.http.get<User>(this.url + '/' + id);
+    return this.http.get<User>(this.url + '/user/' + id);
   }
 
 list():Observable<any>{
-console.log(this.url);
+console.log(this.url+"/users");
 
 
-return this.http.get<User[]> (this.url);
+return this.http.get<User[]> (this.url+"/user");
 }
 
   insert(user:User){
-    return this.http.post(this.url,user);
+    return this.http.post(this.url+"/user",user);
   }
   setList(listaNueva: User[]){
     this.listaCambio.next(listaNueva);
