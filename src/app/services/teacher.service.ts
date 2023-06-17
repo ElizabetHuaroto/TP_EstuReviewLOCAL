@@ -31,4 +31,10 @@ export class TeacherService {
   deleteList(id: any) {
     return this.http.delete<Teacher>(`${this.url}/${id}`);
   }
+  listTeacherId(id:number){
+    return this.http.get<Teacher[]>(`${this.url}?teacherId=${id}`);
+  }
+  listTeacherByName(text:string){
+    return this.http.get<Teacher[]>(`${this.url}?name_like=${text}`);
+  }
 }

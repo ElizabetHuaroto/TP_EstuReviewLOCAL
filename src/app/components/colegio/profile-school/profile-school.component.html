@@ -19,6 +19,21 @@
     <button type="button">Compartir</button>
   </section>
 
-  <app-qualification-school *ngIf="qualification" (sendedReview)="sendedReview()"></app-qualification-school>
+  <section>
+    <app-qualification-school
+    *ngIf="qualification"
+    (sendedReview)="sendedReview()"
+    [pension]="school.pension" [schoolId]="school.id"></app-qualification-school>
+  </section>
+
+  <section>
+    <app-review-school
+      *ngFor="let review of reviews"
+      [calification]="review.calification"
+      [dateReviewT]="review.dateReviewS"
+      [review]="review.review"
+      [userId]="review.userId"
+    ></app-review-school>
+  </section>
 
 </div>

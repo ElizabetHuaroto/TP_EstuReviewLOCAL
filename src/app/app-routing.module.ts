@@ -33,11 +33,7 @@ const routes: Routes = [
     component: ProfileSchoolComponent
   },
   {
-    path: 'search',
-    component: SearchComponent
-  },
-  {
-    path:"searchSchool",
+    path: 'search/:text',
     component: SearchschoolComponent
   },
   {

@@ -1,14 +1,22 @@
 <section class="qualification">
   <p class="qualification-subtitle">Calificar al profesor</p>
-  <div class="stars">
+  <div class="stars-section">
     <p>¿Cuantas estrellas les concedes?</p>
-    <!-- Aqui las estrellas -->
+    <div class="stars">
+      <span *ngFor="let start of [1, 2, 3, 4, 5]" (click)="setStarts(start)">
+        <img class="star" *ngIf="start <= reviewSave.calification else starElse;" src="../../../../assets/images/star.svg" alt="Star Filled">
+        <ng-template #starElse>
+          <img class="star" src="../../../../assets/images/star-outline.svg" alt="Star Filled">
+        </ng-template>
+      </span>
+    </div>
   </div>
 </section>
 <div class="reviews">
-  <form (submit)="sendReview()">
-    <textarea name="review" id="review" cols="20" rows="10" placeholder="Escribir comentario..."></textarea>
+  <form (submit)="addReviewTeacher()">
+    <textarea [(ngModel)]="reviewSave.review" name="review" id="review" cols="20" rows="10" placeholder="Escribir comentario..."></textarea>
     <div class="btn-publish">
+      <button (click)="cancelReview()" style="margin-right: 10px;" type="submit">Cancel</button>
       <button type="submit">Publicar</button>
     </div>
   </form>

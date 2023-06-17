@@ -1,15 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Teacher } from 'src/app/models/teacher';
+import { Component, Input } from '@angular/core';
 import { User } from 'src/app/models/user';
-import { TeacherService } from 'src/app/services/teacher.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-review-teacher',
-  templateUrl: './review-teacher.component.html',
-  styleUrls: ['./review-teacher.component.css']
+  selector: 'app-review-school',
+  templateUrl: './review-school.component.html',
+  styleUrls: ['./review-school.component.css']
 })
-export class ReviewTeacherComponent implements OnInit {
+export class ReviewSchoolComponent {
   @Input()userId:number= 0; //CAMBIARRR
   @Input()review:string="";
   @Input()calification:number=0;

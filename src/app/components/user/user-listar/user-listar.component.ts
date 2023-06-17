@@ -13,7 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 export class UserListarComponent implements OnInit{
 
   lista: User[]=[];
-  displayedColumns =['id','nameUser','typeUser','emailUser','passwordUser','districUser','ageUser'];
+  displayedColumns =['id','nameUser','typeUser','email','password','districUser','ageUser'];
 
   dataSource = new MatTableDataSource<User>();
 

@@ -7,6 +7,6 @@ export class ReviewTeacher
   review: string = "";
   teacherId: number=0;
   payForHour: number =0;
-  calification: number = 0;
+  calification: number = 1;
   userId: number=0;
 }

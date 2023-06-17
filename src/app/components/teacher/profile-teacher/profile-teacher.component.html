@@ -19,7 +19,7 @@
     <button type="button">Compartir</button>
   </section>
 
-  <app-qualification-teacher *ngIf="qualification" (sendedReview)="sendedReview()"></app-qualification-teacher>
+  <app-qualification-teacher *ngIf="qualification" (sendedReview)="sendedReview()" [pension]="teacher.pension" [teacherId]="teacher.id"></app-qualification-teacher>
 
   <app-review-teacher *ngFor="let review of reviews" [userId]="review.userId" [review] = review.review [calification] =review.calification [dateReviewT]=" review.dateReviewT"></app-review-teacher>
 

@@ -1,6 +1,6 @@
 
 .qualification {
-  margin-top: 20px;
+  margin-top: 40px;
   padding-right: 20px;
   padding-left: 20px;
   background-color: #E095F2;
@@ -43,4 +43,14 @@
 
 .btn-publish button:hover {
   background-color: #aa71b8;
+}
+
+.stars-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.star {
+  width: 30px;
 }

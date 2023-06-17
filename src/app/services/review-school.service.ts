@@ -25,6 +25,8 @@ export class ReviewSchoolService {
    update(aut: ReviewSchool){
      return this.http.put(this.url+"/"+aut.id, aut);
    }
-
+   listSchoolId(id:number){
+    return this.http.get<ReviewSchool[]>(`${this.url}?schoolId=${id}`);
+  }
 
 }

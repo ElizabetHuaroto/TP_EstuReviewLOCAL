@@ -23,10 +23,17 @@ export class ProfileTeacherComponent {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id']; //capturando el id del listado
     });
-this.ReviewTeacher.listTeacherId(this.id).subscribe(response=> {
-  this.reviews= response;
-});
+    const user = localStorage.getItem("UserLogged");
+    const userParsed = JSON.parse(user? user : '');
+
+    this.getTeacherReviews();
     this.getSchoolById();
+  }
+
+  getTeacherReviews() {
+    this.ReviewTeacher.listTeacherId(this.id).subscribe(response=> {
+      this.reviews= response;
+    });
   }
 
   getSchoolById() {
@@ -44,5 +51,7 @@ this.ReviewTeacher.listTeacherId(this.id).subscribe(response=> {
 
     // Desactivar formulario
     this.qualification = false;
+
+    this.getTeacherReviews();
   }
 }

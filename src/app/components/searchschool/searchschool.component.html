@@ -1,28 +1,12 @@
 <div class="container">
   <div class="two-columns">
-    <section class="filters">
+    <form (ngSubmit)="filter()" *ngIf="userType == 'padre de familia' else univesitarios;" class="filters">
       <div class="stars">
         <p>Cantidad de estrellas</p>
         <div class="values">
-          <div class="value">
-            <span>1</span>
-            <input type="checkbox">
-          </div>
-          <div class="value">
-            <span>2</span>
-            <input type="checkbox">
-          </div>
-          <div class="value">
-            <span>3</span>
-            <input type="checkbox">
-          </div>
-          <div class="value">
-            <span>4</span>
-            <input type="checkbox">
-          </div>
-          <div class="value">
-            <span>5</span>
-            <input type="checkbox">
+          <div class="value" *ngFor="let star of [1, 2, 3, 4, 5]">
+            <span>{{ star }}</span>
+            <input (click)="setStarFilter(star)" type="checkbox">
           </div>
         </div>
       </div>
@@ -30,58 +14,108 @@
       <div class="pension">
         <p>Pensión</p>
         <div class="values">
-          <div class="value">
-            <span>estatal</span>
-            <input type="checkbox">
-          </div>
-          <div class="value">
-            <span>300-400 soles</span>
-            <input [(ngModel)] ="valuee" type="checkbox">
-          </div>
-          <div class="value">
-            <span>400 - 500 soles</span>
-            <input type="checkbox">
-          </div>
-          <div class="value">
-            <span>500 - 700 soles</span>
-            <input type="checkbox">
+          <div class="value" *ngFor="let pension of [300, 500, 700, 1000]">
+            <span>Menor a {{pension}} soles</span>
+            <input (click)="setFilterPension(pension)" type="checkbox">
           </div>
         </div>
       </div>
 
       <div class="district">
-        <p>cursos que dicta</p>
-        <select name="districts" id="district">
-          <option value="value1">San Juan de Lurigancho</option>
-          <option value="value2" selected>Los Olivos</option>
-          <option value="value3">Choriillo</option>
-          <option value="value4">Cercado de Lima</option>
-          <option value="value5">Surco</option>
-          <option value="value6">Ate</option>
-          <option value="value7">La molina</option>
-
+        <p>Distritos</p>
+        <select [(ngModel)]="districtFilter" name="districts" id="district">
+          <option value="Ninguno">Ninguno</option>
+          <option value="San Juan de Lurigancho">San Juan de Lurigancho</option>
+          <option value="Los olivos">Los olivos</option>
+          <option value="Chorrillos">Chorrillos</option>
+          <option value="Cercado de Lima">Cercado de Lima</option>
+          <option value="Surco">Surco</option>
+          <option value="Ate">Ate</option>
+          <option value="La molina">La molina</option>
         </select>
       </div>
-    </section>
-    <section class="results">
-      <h1>Colegios encontrados</h1>
-      <p style="font-style: italic;">Se encontraron {{this.lista.length}} resultados para {{textSearch}}</p>
-      <div class="response">
-        <a [routerLink]="['/colegios' , school.id]"style="text-decoration: none; color: black;" *ngFor="let school of lista">
-          <div class="card">
-            <div class="image">
-              <img class="photo" [src]="school.photo">
-            </div>
-            <div class="info">
-              <h2 class="name">{{ school.name }}</h2>
-              <p class="district">{{ school.district }}</p>
-              <ng-template #course>
-                <p class="course">{{ school.course }}</p>
-              </ng-template>
+      <div class="actions">
+        <input type="submit" value="Filtrar">
+        <input (click)="reset()" type="button" value="Quitar Filtros">
+      </div>
+    </form>
+    <ng-template #univesitarios >
+      <form (submit)="filter()" class="filters">
+        <div class="stars">
+          <p>Cobro por hora</p>
+          <div class="values">
+            <div class="value" *ngFor="let star of [1, 2, 3, 4, 5]">
+              <span>{{ star }}</span>
+              <input (click)="setStarFilter(star)" type="checkbox">
             </div>
           </div>
-        </a>
+        </div>
+
+        <div class="pension">
+          <p>Cobro por hora</p>
+            <div class="values">
+              <div class="value" *ngFor="let amount of [100, 80, 60, 40]">
+                <span>Menos de {{amount}} soles</span>
+                <input (click)="setFilterPension(amount)" type="checkbox">
+              </div>
+            </div>
+        </div>
+
+        <div class="district">
+          <p>Cursos que dicta</p>
+          <select [(ngModel)]="courseFilter" name="courses" id="courses">
+            <option value="Ninguno">Ninguno</option>
+            <option value="Calculo">Calculo</option>
+            <option value="Programacion I">Programacion I</option>
+            <option value="Etica">Etica</option>
+            <option value="Matemática básica">Matemática básica</option>
+            <option value="Fundamentos de programación">Fundamentos de programación</option>
+            <option value="Java I">Java I</option>
+            <option value="Lenguaje">Lenguaje</option>
+          </select>
+        </div>
+        <div class="actions">
+          <input type="submit" value="Filtrar">
+          <input (click)="reset()" type="reset" value="Quitar Filtros">
+        </div>
+      </form>
+    </ng-template>
+
+    <section class="results">
+      <div *ngIf="userType === 'padre de familia' else univesitariosResult;">
+        <h1>Colegios encontrados</h1>
+        <p style="font-style: italic;">Se encontraron {{this.showFilterColegios.length}} resultados para {{textSearch}}</p>
+        <div class="response">
+          <a [routerLink]="['/colegios' , school.id]"style="text-decoration: none; color: black;" *ngFor="let school of showFilterColegios">
+            <div class="card">
+              <div class="image">
+                <img class="photo" [src]="school.photo">
+              </div>
+              <div class="info">
+                <h2 class="name">{{ school.name }}</h2>
+                <p class="district">{{ school.district }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
+      <ng-template #univesitariosResult>
+        <h1>Profesores encontrados</h1>
+        <p style="font-style: italic;">Se encontraron {{this.showFilterProfesores.length}} resultados para {{textSearch}}</p>
+        <div class="response">
+          <a [routerLink]="['/teachers' , teacher.id]"style="text-decoration: none; color: black;" *ngFor="let teacher of showFilterProfesores">
+            <div class="card">
+              <div class="image">
+                <img class="photo" [src]="teacher.photo">
+              </div>
+              <div class="info">
+                <h2 class="name">{{ teacher.name }}</h2>
+                <p class="district">{{ teacher.course }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </ng-template>
     </section>
   </div>
 
