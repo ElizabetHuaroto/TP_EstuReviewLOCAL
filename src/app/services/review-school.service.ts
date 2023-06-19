@@ -18,7 +18,7 @@ export class ReviewSchoolService {
     return this.http.get<ReviewSchool[]> (this.url+"/reviewSchools");
     }
     insert(reviewSchool : ReviewSchool){
-      return this.http.post(this.url+"/reviewSchool", reviewSchool);
+      return this.http.post(this.url+"/reviewSchoola", reviewSchool);
    }
    listId(id:number){
      return this.http.get<ReviewSchool>(`${this.url+"/reviewSchool"}/${id}`);

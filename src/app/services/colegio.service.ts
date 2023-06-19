@@ -27,7 +27,7 @@ export class ColegioService {
     return this.http.put(this.url+"/school"+aut.id, aut);
   }
   deleteList(id: any) {
-    return this.http.delete<Colegio>(`${this.url+"/school"}/${id}`);
+    return this.http.delete<Colegio>(`${this.url+"/scqhool"}/${id}`);
   }
   listSchoolByName(text:string){
     return this.http.get<Colegio[]>(`${this.url+"/school"}?name_like=${text}`);

@@ -32,7 +32,7 @@ export class TeacherService {
     return this.http.delete<Teacher>(`${this.url+"/teacher"}/${id}`);
   }
   listTeacherId(id:number){ //QUEJESTO OSEA COMO SE PONEN EN BACK
-    return this.http.get<Teacher[]>(`${this.url+"/teacher"}?teacherId=${id}`);
+    return this.http.get<Teacher[]>(`${this.url}/teacher?teacherId=${id}`);
   }
   listTeacherByName(text:string){
     return this.http.get<Teacher[]>(`${this.url+"/teacher"}?name_like=${text}`);

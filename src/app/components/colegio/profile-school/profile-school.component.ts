@@ -33,7 +33,9 @@ export class ProfileSchoolComponent {
   }
 
   getSchoolById() {
+
     this.ColegioService.listId(this.id).subscribe(response => {
+      console.log(response);
       this.school = response;
     })
   }

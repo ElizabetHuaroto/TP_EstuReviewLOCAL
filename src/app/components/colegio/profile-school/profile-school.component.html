@@ -1,16 +1,16 @@
 <div class="container">
   <section class="school">
     <div class="school-info">
-      <h1 class="title">{{ school.name }}</h1>
+      <h1 class="title">{{ school?.name }}</h1>
       <div class="content">
         <p class="content-subtitle">Información de filtros:</p>
-        <p>calificacion: {{ school.calification }} estrellas</p>
-        <p>Pension: {{ school.pension }} soles</p>
-        <p>Ubicación: {{ school.district }}</p>
+        <p>calificacion: {{ school?.calification }} estrellas</p>
+        <p>Pension: {{ school?.pension }} soles</p>
+        <p>Ubicación: {{ school?.district }}</p>
       </div>
     </div>
     <div class="school-img">
-      <img [src]="school.photo" [alt]="school.name + 'photo'">
+      <img [src]="school?.photo" [alt]="school?.name + 'photo'">
     </div>
   </section>
 
