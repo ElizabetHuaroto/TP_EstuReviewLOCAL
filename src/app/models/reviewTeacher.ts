@@ -4,9 +4,9 @@ export class ReviewTeacher
 {
   id:number=0;
   dateReviewT: Date=new Date(Date.now())
-  review: string = "";
-  teacherId: number=0;
+  reviewT: string = "";
+  identidadProfesor: number=0;
   payForHour: number =0;
   calification: number = 1;
-  userId: number=0;
+  identidadUsuario: number=0;
 }

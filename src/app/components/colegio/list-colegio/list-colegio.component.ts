@@ -12,7 +12,7 @@ import { ColegioService } from 'src/app/services/colegio.service';
 })
 export class ListColegioComponent {
   lista: Colegio[] = [];
-  userName: string = "Carlos";
+  userName: string = "";
   /* displayedColumns = ['id','name','district','pension'];
   dataSource = new MatTableDataSource<Colegio>();
   @ViewChild(MatPaginator) paginator : MatPaginator;
@@ -21,6 +21,10 @@ export class ListColegioComponent {
   constructor(private colegioService: ColegioService){
   }
   ngOnInit(): void {
+
+    const user = localStorage.getItem("UserLogged");
+    const userParsed = user ? JSON.parse(user) : null;
+    this.userName= userParsed?.nameUser;
     this.colegioService.list().subscribe(data => {
 
 

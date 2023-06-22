@@ -19,15 +19,16 @@ private listaCambio = new Subject<ReviewTeacher[]>();
     return this.http.get<ReviewTeacher[]> (this.url+"/reviewTeachers");
     }
     insert(reviewSchool : ReviewTeacher){
-      return this.http.post(this.url+"/reviewTeacher", reviewSchool);
+      return this.http.post(this.url+"/reviewTeacherCrear", reviewSchool);
    }
    listId(id:number){
-     return this.http.get<ReviewTeacher>(`${this.url+"/reviewTeacher"}/${id}`);
+     return this.http.get<ReviewTeacher>(`${this.url+"/reviewTeacherCodigo"}/${id}`);
    }
    update(aut: ReviewTeacher){
-     return this.http.put(this.url+"/reviewTeacher"+aut.id, aut);
+     return this.http.put(this.url+"/reviewTeacherActualizar"+aut.id, aut);
    }
    listTeacherId(id:number){ //PREGUNTARRRR
-    return this.http.get<ReviewTeacher[]>(`${this.url+"/reviewTeacher"}?teacherlId=${id}`);
+    return this.http.get<ReviewTeacher[]>(`${this.url+"/reviewTeacherslISTA"}/${id}`);
   }
 }
+///${id}`

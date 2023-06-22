@@ -18,18 +18,18 @@ export class ColegioService {
   }
 
   insert(colegio : Colegio){
-     return this.http.post(this.url+"/school", colegio);
+     return this.http.post(this.url+"/schoolcrear", colegio);
   }
   listId(id:number){
-    return this.http.get<Colegio>(`${this.url+"/school"}/${id}`);
+    return this.http.get<Colegio>(`${this.url+"/schoolEntidad"}/${id}`);
   }
   update(aut: Colegio){
-    return this.http.put(this.url+"/school"+aut.id, aut);
+    return this.http.put(this.url+"/schoolActualizar"+aut.id, aut);
   }
   deleteList(id: any) {
-    return this.http.delete<Colegio>(`${this.url+"/scqhool"}/${id}`);
+    return this.http.delete<Colegio>(`${this.url+"/schoolborrar"}/${id}`);
   }
   listSchoolByName(text:string){
-    return this.http.get<Colegio[]>(`${this.url+"/school"}?name_like=${text}`);
+    return this.http.get<Colegio[]>(`${this.url+"/schoolObtener/"}${text}`);
   }
 }

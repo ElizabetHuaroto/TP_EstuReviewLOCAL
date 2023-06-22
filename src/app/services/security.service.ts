@@ -15,7 +15,7 @@ export class SecurityService {
   constructor(private http:HttpClient) {
   }
   login( user:Object ) {
-    return this.http.post(`${this.url}/login`, user);
+    return this.http.post(this.url+"/login", user);
   }
 
   register(user: User) {

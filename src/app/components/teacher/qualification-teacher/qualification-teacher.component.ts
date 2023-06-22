@@ -28,16 +28,16 @@ export class QualificationTeacherComponent {
 
   resetReviewTeacher() {
     this.reviewSave.calification = 1;
-    this.reviewSave.review = '';
+    this.reviewSave.reviewT = '';
   }
 
   addReviewTeacher() {
     const user = localStorage.getItem("UserLogged");
     const userParsed = JSON.parse(user? user : '');
 
-    this.reviewSave.teacherId = this.teacherId;
+    this.reviewSave.identidadProfesor = this.teacherId;
     this.reviewSave.payForHour = this.pension;
-    this.reviewSave.userId = userParsed.id;
+    this.reviewSave.identidadUsuario = userParsed.id;
 
     this.ReviewTeacherService.insert(this.reviewSave).subscribe(
       reponse => {

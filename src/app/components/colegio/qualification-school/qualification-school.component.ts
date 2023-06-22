@@ -27,16 +27,34 @@ export class QualificationSchoolComponent {
 
   resetReviewSchool() {
     this.reviewSave.calification = 1;
-    this.reviewSave.review = '';
+    this.reviewSave.reviewS = '';
   }
 
   sendReview() {
-    const user = localStorage.getItem("UserLogged");
-    const userParsed = JSON.parse(user? user : '');
 
-    this.reviewSave.schoolId = this.schoolId;
+    const user = localStorage.getItem("UserLogged");
+    //const userParsed = JSON.parse(user? user : '');
+
+    let userParsed;
+    if (user) {
+      try {
+        userParsed = JSON.parse(user);
+      } catch (error) {
+        console.error("Error al analizar el JSON del usuario:", error);
+      }
+    } else {
+      console.error("El usuario no está presente en el LocalStorage.");
+    }
+
+    this.reviewSave.identidadColegio = this.schoolId;
     this.reviewSave.pension = this.pension;
-    this.reviewSave.userId = userParsed.id;
+    if (userParsed && userParsed.id) {
+      this.reviewSave.identidadUsuario = userParsed.id;
+    } else {
+      console.error("El objeto userParsed no tiene una propiedad 'id' válida.");
+    }
+
+   // this.reviewSave.userId = userParsed.id;
 
     this.ReviewSchoolService.insert(this.reviewSave).subscribe(
       reponse => {

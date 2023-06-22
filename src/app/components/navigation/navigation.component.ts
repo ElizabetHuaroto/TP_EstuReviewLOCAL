@@ -16,6 +16,7 @@ export class NavigationComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
+    console.log("UserLogged");
     const user = localStorage.getItem("UserLogged");
     this.userParsed = user ? JSON.parse(user) : null; // Actualización: Asignar el valor de userParsed
 

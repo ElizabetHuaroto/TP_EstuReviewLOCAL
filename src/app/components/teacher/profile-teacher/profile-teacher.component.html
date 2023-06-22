@@ -1,16 +1,16 @@
 <div class="container">
   <section class="school">
     <div class="school-info">
-      <h1 class="title">{{ teacher.name }}</h1>
+      <h1 class="title">{{ teacher?.name }}</h1>
       <div class="content">
         <p class="content-subtitle">Información de filtros:</p>
-        <p>Costo por hora: {{ teacher.pension }} soles</p>
-        <p>Curso que enseña: {{ teacher.course }}</p>
-        <p>calificacion: {{ teacher.calification }} estrellas</p>
+        <p>Costo por hora: {{ teacher?.pension }} soles</p>
+        <p>Curso que enseña: {{ teacher?.course }}</p>
+        <p>calificacion: {{ teacher?.calification }} estrellas</p>
       </div>
     </div>
     <div class="school-img">
-      <img [src]="teacher.photo" [alt]="teacher.name + 'photo'">
+        <img [src]="teacher?.photo" [alt]="teacher?.name + 'photo'">
     </div>
   </section>
 
@@ -21,7 +21,12 @@
 
   <app-qualification-teacher *ngIf="qualification" (sendedReview)="sendedReview()" [pension]="teacher.pension" [teacherId]="teacher.id"></app-qualification-teacher>
 
-  <app-review-teacher *ngFor="let review of reviews" [userId]="review.userId" [review] = review.review [calification] =review.calification [dateReviewT]=" review.dateReviewT"></app-review-teacher>
+  <app-review-teacher *ngFor="let review of reviews"
+   [userId]="review.identidadUsuario"
+   [review] = review.reviewT
+    [calification] =review.calification
+    [dateReviewT]=" review.dateReviewT"
+    ></app-review-teacher>
 
 </div>
 

@@ -26,18 +26,18 @@ public isEnterSubject = new BehaviorSubject<boolean>(false);
   }
 
   getById(id: number) {
-    return this.http.get<User>(this.url + '/user/' + id);
+    return this.http.get<User>(this.url + '/usercodigo/' + id);
   }
 
 list():Observable<any>{
 console.log(this.url+"/users");
 
 
-return this.http.get<User[]> (this.url+"/user");
+return this.http.get<User[]> (this.url+"/users");
 }
 
   insert(user:User){
-    return this.http.post(this.url+"/user",user);
+    return this.http.post(this.url+"/usercrear",user);
   }
   setList(listaNueva: User[]){
     this.listaCambio.next(listaNueva);

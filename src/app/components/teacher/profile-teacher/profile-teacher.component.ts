@@ -15,16 +15,17 @@ export class ProfileTeacherComponent {
 
   qualification: boolean = false;
 
-  teacher: Teacher;
   reviews: ReviewTeacher []= [];
+  teacher: Teacher;
+
   constructor(private router: Router, private route: ActivatedRoute, private TeacherService: TeacherService, private ReviewTeacher: ReviewTeacherService) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id']; //capturando el id del listado
     });
-    const user = localStorage.getItem("UserLogged");
-    const userParsed = JSON.parse(user? user : '');
+   // const user = localStorage.getItem("UserLogged");
+    //const userParsed = JSON.parse(user? user : '');
 
     this.getTeacherReviews();
     this.getSchoolById();

@@ -18,16 +18,16 @@ export class ReviewSchoolService {
     return this.http.get<ReviewSchool[]> (this.url+"/reviewSchools");
     }
     insert(reviewSchool : ReviewSchool){
-      return this.http.post(this.url+"/reviewSchoola", reviewSchool);
+      return this.http.post(this.url+"/reviewSchoolCrear", reviewSchool);
    }
    listId(id:number){
-     return this.http.get<ReviewSchool>(`${this.url+"/reviewSchool"}/${id}`);
+     return this.http.get<ReviewSchool>(`${this.url+"/reviewSchoolCodigo"}/${id}`);
    }
    update(aut: ReviewSchool){
-     return this.http.put(this.url+"/reviewSchool"+aut.id, aut);
+     return this.http.put(this.url+"/reviewSchoolActualizar"+aut.id, aut);
    }
    listSchoolId(id:number){
-    return this.http.get<ReviewSchool[]>(`${this.url+"/reviewSchool"}?schoolId=${id}`);
+    return this.http.get<ReviewSchool[]>(`${this.url+"/reviewSchoollISTA"}/${id}`);
   }
 
 }

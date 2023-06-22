@@ -16,25 +16,25 @@ export class TeacherService {
   constructor(private http:HttpClient) { }
 
   list():Observable<any>{
-    return this.http.get<Teacher[]>(this.url+"/teachers"); //cambiar variables
+    return this.http.get<Teacher[]>(this.url+"/teacherObtener"); //cambiar variables
   }
 
   insert(colegio : Teacher){
-     return this.http.post(this.url+"/teacher", colegio);
+     return this.http.post(this.url+"/teacherCrear", colegio);
   }
   listId(id:number){
-    return this.http.get<Teacher>(`${this.url+"/teacher"}/${id}`);
+    return this.http.get<Teacher>(`${this.url+"/teachers"}/${id}`);
   }
   update(aut: Teacher){
-    return this.http.put(this.url+"/teacher"+aut.id, aut);
+    return this.http.put(this.url+"/teacherActualizar"+aut.id, aut);
   }
   deleteList(id: any) {
-    return this.http.delete<Teacher>(`${this.url+"/teacher"}/${id}`);
+    return this.http.delete<Teacher>(`${this.url+"/teacherBorrar"}/${id}`);
   }
   listTeacherId(id:number){ //QUEJESTO OSEA COMO SE PONEN EN BACK
-    return this.http.get<Teacher[]>(`${this.url}/teacher?teacherId=${id}`);
+    return this.http.get<Teacher[]>(`${this.url+"/teachers"}/teacher?teacherId=${id}`);
   }
   listTeacherByName(text:string){
-    return this.http.get<Teacher[]>(`${this.url+"/teacher"}?name_like=${text}`);
+    return this.http.get<Teacher[]>(`${this.url+"/teacherObtener/"}${text}`);
   }
 }

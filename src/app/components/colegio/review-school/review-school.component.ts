@@ -11,7 +11,7 @@ export class ReviewSchoolComponent {
   @Input()userId:number= 0; //CAMBIARRR
   @Input()review:string="";
   @Input()calification:number=0;
-  @Input()dateReviewT:Date=new Date(Date.now());
+  @Input()dateReviewS:Date=new Date(Date.now());
 
   user: User;
   starsArray: Boolean[] = [false, false, false, false, false]
@@ -24,3 +24,4 @@ export class ReviewSchoolComponent {
     }
   }
 }
+

@@ -1,8 +1,8 @@
 <div class="review">
   <div class="two-columns">
     <div class="info">
-      <h3 class="reviewUser"> {{user.nameUser}}</h3>
-      <p class="fecha">{{dateReviewT}}</p>
+      <h3 class="reviewUser"> {{user?.nameUser}}</h3>
+      <p class="fecha">{{dateReviewS}}</p>
     </div>
     <div class="stars">
       <span *ngFor="let start of starsArray">

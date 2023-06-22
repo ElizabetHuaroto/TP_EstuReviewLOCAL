@@ -4,9 +4,9 @@ export class ReviewSchool
 {
   id:number=0;
   dateReviewS: Date=new Date(Date.now())
-  review: string = "";
+  reviewS: string = "";
   calification: number = 1;
-  schoolId: number=0;
-  userId:number=0;
+  identidadColegio: number=0;
+  identidadUsuario:number=0;
   pension: number =0;
 }

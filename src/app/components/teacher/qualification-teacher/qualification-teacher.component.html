@@ -14,7 +14,7 @@
 </section>
 <div class="reviews">
   <form (submit)="addReviewTeacher()">
-    <textarea [(ngModel)]="reviewSave.review" name="review" id="review" cols="20" rows="10" placeholder="Escribir comentario..."></textarea>
+    <textarea [(ngModel)]="reviewSave.reviewT" name="review" id="review" cols="20" rows="10" placeholder="Escribir comentario..."></textarea>
     <div class="btn-publish">
       <button (click)="cancelReview()" style="margin-right: 10px;" type="submit">Cancel</button>
       <button type="submit">Publicar</button>
